@@ -4,12 +4,12 @@ let respuesta = document.getElementById('respuesta');
 function callApiRequest(){
 
     // Hacer una petición para un usuario con ID especifico
-axios.get('https://3.17.4.88/iot-car-control/back-end/apis/getRegistro.php')
+axios.get('https://18.224.13.4/iot-car-control/back-end/apis/getRegistro.php')
 .then(function (response) {
   // manejar respuesta exitosa
   console.log(response);
 
-  let respuestaservidor = response.data == "w"?"ADELANTE":response.data == "s"?"ATRAS":response.data == "a"?"IZQUIERDA":response.data == "d"?"DERECHA": response.data == "p"?"PARAR":"LETRA NO CONOCIDA";
+  let respuestaservidor = response.data == "f"?"ADELANTE":response.data == "b"?"ATRAS":response.data == "l"?"IZQUIERDA":response.data == "r"?"DERECHA": response.data == "s"?"PARAR":"LETRA NO CONOCIDA";
   respuesta.innerHTML = "Respuesta: <strong>" +respuestaservidor;
 })
 .catch(function (error) {
